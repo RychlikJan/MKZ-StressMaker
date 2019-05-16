@@ -71,8 +71,8 @@ public class FastClickActivity extends AppCompatActivity {
                         //TODO Remove showToast
                         countOfAttempts--;
                         sr.increaseLvl(1);
-                        showToast();
-                        showStresLvl();
+                        //showToast();
+                        //showStresLvl();
                         showButton();
 
                 }

@@ -6,6 +6,7 @@ package com.example.stressmaker;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -64,6 +65,14 @@ public class MainActivity extends AppCompatActivity {
         public void stressViewSetText () {
 
             TextView myAwesomeTextView = (TextView) findViewById(R.id.myAwesomeTextView);
+            if(sr.getLvl() <51){
+                myAwesomeTextView.setTextColor(Color.GREEN);
+            } else if(sr.getLvl()>=51 && sr.getLvl() <75){
+                myAwesomeTextView.setTextColor(Color.YELLOW);
+            }
+            else {
+                myAwesomeTextView.setTextColor(Color.RED);
+            }
 
 
             myAwesomeTextView.setText("StressScore:" + sr.getLvl() + "%");
@@ -79,14 +88,17 @@ public class MainActivity extends AppCompatActivity {
             builder.setPositiveButton("SET", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    if (input.getText() == null) {
-                        return;
+                    if (input.getText() == null || input.getText().toString().equals("")) {
+                        sr.setLvl(1);
+                        stressViewSetText();
                     }
-                    m_Text[0] = input.getText().toString();
-                    int result = Integer.parseInt(m_Text[0]);
-                    result += 1;
-                    sr.setLvl(result % 100);
-                    stressViewSetText();
+                    else {
+                        m_Text[0] = input.getText().toString();
+                        int result = Integer.parseInt(m_Text[0]);
+                        result += 1;
+                        sr.setLvl(result % 100);
+                        stressViewSetText();
+                    }
 
                 }
             });

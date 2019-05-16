@@ -45,7 +45,7 @@ public String[] noWords = {"No","Never","Die","Go away", "Fucked up","Fuck you",
                 MediaPlayer mp = MediaPlayer.create(this,R.raw.the_simpsons_nelsons_haha);
                 mp.start();
             }
-            Toast.makeText(this, noWords[pos] + countOfAttempts, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, noWords[pos] , Toast.LENGTH_SHORT).show();
             sr.increaseLvl(1);
             countOfAttempts--;
         }
