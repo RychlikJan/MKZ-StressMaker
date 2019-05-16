@@ -24,7 +24,7 @@ public class JumpButton extends AppCompatActivity {
         sr = StressLevel.getInstance();
         btnJmp = findViewById(R.id.btnJmp);
         countClick = 0;
-        timerSpeed = 1000;
+        timerSpeed = 300;
         timer();
 
     }
@@ -39,9 +39,10 @@ public class JumpButton extends AppCompatActivity {
                 else {
 
                     //TODO Remove showToast
-                    sr.increaseLvl(1);
+                    //sr.increaseLvl(1);
                     jmpButton();
                     timer();
+
 
                 }
             }
@@ -50,6 +51,7 @@ public class JumpButton extends AppCompatActivity {
     }
 
     protected void jmpButton(){
+        Button btnJmp = (Button)findViewById(R.id.btnJmp);
         btnJmp.setVisibility(View.VISIBLE);
         AbsoluteLayout.LayoutParams absParams =
                 (AbsoluteLayout.LayoutParams)btnJmp.getLayoutParams();
@@ -73,13 +75,14 @@ public class JumpButton extends AppCompatActivity {
 
     }
 
-    public  void btnJumpClick(){
+    public  void btnJumpClick(View v){
         countClick++;
         if(countClick == 3){
             finish();
         }
         else{
             timerSpeed = (int)timerSpeed/2;
+            sr.increaseLvl(7);
         }
 
     }

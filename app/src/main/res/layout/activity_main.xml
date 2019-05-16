@@ -67,4 +67,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rejecting" />
 
+    <TextView
+        android:id="@+id/myAwesomeTextView"
+        android:layout_width="254dp"
+        android:layout_height="86dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="45dp"
+        android:text="Escriba el mensaje y luego clickee el canal a ser enviado"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jmpButton" />
+
 </android.support.constraint.ConstraintLayout>

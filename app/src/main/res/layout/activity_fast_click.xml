@@ -14,7 +14,7 @@
         android:layout_marginTop="344dp"
         android:layout_marginEnd="184dp"
         android:layout_marginBottom="344dp"
-        android:text="@string/resource"
+        android:text=""
         android:textAlignment="center"
         android:textSize="36sp"
         android:textStyle="bold"
