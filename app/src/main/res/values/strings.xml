@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">StressMaker</string>
+    <string name="fastClick">Fast Click</string>
+    <string name="resource" />
+    <string name="title_activity_reject">RejectActivity</string>
+    <string name="rejecting">Rejecting</string>
+    <string name="title_activity_alarm">Alarm</string>
+    <string name="set_alarm">Set Alarm</string>
+    <string name="reset_alarm">Reset Alarm</string>
+    <string name="alarm_not_set">Alarm not set</string>
+    <string name="alarm">Alarm</string>
+    <string name="title_activity_jumping_button">JumpingButton</string>
+    <string name="item_2">Change song</string>
+    <string name="item_1">Switch off alarm</string>
+    <string name="yes">YES</string>
+    <string name="soundtest">SoundTest</string>
+    <string name="jumping_button">Jumping Button</string>
+</resources>
