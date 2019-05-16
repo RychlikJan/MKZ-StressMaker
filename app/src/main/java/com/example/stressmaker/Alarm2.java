@@ -34,7 +34,11 @@ public class Alarm2 extends AppCompatActivity {
     StressLevel sr;
     int timeMove;
 
-
+    /**
+     * Method on  create.
+     * Init the layouts and set on click methods
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +50,10 @@ public class Alarm2 extends AppCompatActivity {
         btn_set = (Button) findViewById(R.id.btn_set);
         btn_reset = (Button) findViewById(R.id.btn_reset);
         btn_set.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Method on click at alarm
+             * @param v
+             */
             @Override
             public void onClick(View v) {
                 Calendar calendar = Calendar.getInstance();
@@ -71,7 +79,11 @@ public class Alarm2 extends AppCompatActivity {
                 setAlarm(calendar.getTimeInMillis(), calendar);
             }
 
-
+            /**
+             * Method to set alarm
+             * @param timeInMillis time in miliseconds from now
+             * @param c calendar
+             */
             private void setAlarm(long timeInMillis, Calendar c) {
                 AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
                 Intent intent = new Intent(Alarm2.this, AlarmAdapter.class);
@@ -103,6 +115,12 @@ public class Alarm2 extends AppCompatActivity {
             }
         });
     }
+
+    /**
+     * Options menu
+     * @param menu menu
+     * @return
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -110,6 +128,11 @@ public class Alarm2 extends AppCompatActivity {
         return true;
     }
 
+    /**
+     * Method to certain click in menu
+     * @param item item
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
@@ -169,6 +192,10 @@ public class Alarm2 extends AppCompatActivity {
                 .setNegativeButton("No", dialogClickListener).show();
     }
 
+    /**
+     * Method to set number of minits for length
+     * @return
+     */
     protected int setTimeMove(){
         Random r = new Random();
         int low = 5;
@@ -177,6 +204,9 @@ public class Alarm2 extends AppCompatActivity {
         //return 0;
     }
 
+    /**
+     * Method to choose file.
+     */
     public void pathMethods(){
         Intent intent = new Intent();
         intent.addCategory(Intent.CATEGORY_OPENABLE);
@@ -186,6 +216,13 @@ public class Alarm2 extends AppCompatActivity {
         startActivityForResult(Intent.createChooser(intent, "DEMO"),1001);
 
     }
+
+    /**
+     * Method to work with choosed file
+     * @param requestCode
+     * @param resultCode
+     * @param data
+     */
     public void onActivityResult(int requestCode, int resultCode,
                                  Intent data) {
         // TODO Auto-generated method stub
@@ -206,6 +243,9 @@ public class Alarm2 extends AppCompatActivity {
         }
     }
 
+    /**
+     * Recursive dialog for choosen mp3
+     */
     protected void recursiveDialog(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Do you want choose this song");

@@ -8,6 +8,9 @@ import android.provider.Settings;
 
 import static android.content.Context.AUDIO_SERVICE;
 
+/**
+ * Class to play and stop alarm audios.
+ */
 public class AudioPlay {
 
     public static MediaPlayer mediaPlayer;

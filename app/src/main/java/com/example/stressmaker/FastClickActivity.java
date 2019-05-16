@@ -19,10 +19,16 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * Class for fast clicl activity
+ */
 public class FastClickActivity extends AppCompatActivity {
     private int countOfAttempts;
     StressLevel sr;
     @Override
+    /**
+     * OnCreate set the title, init layouts and run timer
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Fast Click Mode");
@@ -56,6 +62,10 @@ public class FastClickActivity extends AppCompatActivity {
         dlgAlert.setCancelable(true);
         dlgAlert.create().show();
     }
+
+    /**
+     * Timer method to count and display countdown on activity
+     */
     protected void timer(){
         final Handler handler = new Handler();
         final TextView textView = findViewById(R.id.textView);
@@ -80,6 +90,11 @@ public class FastClickActivity extends AppCompatActivity {
         };
         handler.postDelayed(counter, 1000);
     }
+
+    /**
+     * Method on click on the display
+     * @param v
+     */
     public void onClick(View v){
         if(countOfAttempts==0){
             finish();
@@ -93,6 +108,9 @@ public class FastClickActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Function to move and show button on activity
+     */
     protected void showButton(){
         Button button = (Button)findViewById(R.id.my_button);
         AbsoluteLayout.LayoutParams absParams =

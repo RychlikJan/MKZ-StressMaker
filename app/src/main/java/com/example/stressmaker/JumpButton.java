@@ -12,12 +12,18 @@ import android.widget.TextView;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * Class for jumping button on display
+ */
 public class JumpButton extends AppCompatActivity {
     StressLevel sr;
     Button btnJmp;
     int countClick;
     int timerSpeed;
     @Override
+    /**
+     * init variable and runs the timer
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jump_button);
@@ -28,6 +34,10 @@ public class JumpButton extends AppCompatActivity {
         timer();
 
     }
+
+    /**
+     * tmer to count time beatween button change the position
+     */
     protected void timer(){
         final Handler handler = new Handler();
         final java.util.concurrent.atomic.AtomicInteger n = new AtomicInteger(2);
@@ -50,6 +60,9 @@ public class JumpButton extends AppCompatActivity {
         handler.postDelayed(counter, timerSpeed);
     }
 
+    /**
+     * display and move button
+     */
     protected void jmpButton(){
         Button btnJmp = (Button)findViewById(R.id.btnJmp);
         btnJmp.setVisibility(View.VISIBLE);
@@ -75,6 +88,10 @@ public class JumpButton extends AppCompatActivity {
 
     }
 
+    /**
+     * Jump button click
+     * @param v
+     */
     public  void btnJumpClick(View v){
         countClick++;
         if(countClick == 3){

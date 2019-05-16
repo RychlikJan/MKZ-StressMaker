@@ -7,8 +7,9 @@ import android.media.MediaPlayer;
 import android.provider.Settings;
 
 
-
-
+/**
+ * Class to run an alarm
+ */
 public class AlarmAdapter extends BroadcastReceiver {
 
     @Override

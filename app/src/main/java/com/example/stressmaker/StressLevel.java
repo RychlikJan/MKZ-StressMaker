@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.provider.Settings;
 
+/**
+ * Class to save information beatween the activites.
+ */
 class StressLevel{
     MediaPlayer mediaPlayer;
     private static final StressLevel ourInstance = new StressLevel();

@@ -87,6 +87,9 @@ public class SoundTest extends AppCompatActivity {
         handler.postDelayed(counter, 1000);
     }
 
+    /**
+     * Method to choose song for playing sounds and choose Yes/No options
+     */
     protected void showButton(){
         if(countOfAttempts == 0){
             Toast.makeText(this, "Testing ended", Toast.LENGTH_LONG).show();
@@ -174,6 +177,11 @@ public class SoundTest extends AppCompatActivity {
         no.setVisibility(View.INVISIBLE);
     }
 
+    /**
+     * Methodto set alarm for ending sound
+     * @param timeInMillis
+     * @param c
+     */
     private void setAlarm(long timeInMillis, Calendar c) {
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(SoundTest.this, SoundTestAdapter.class);

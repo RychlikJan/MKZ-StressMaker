@@ -33,6 +33,9 @@ public String[] noWords = {"No","Never","Die","Go away", "Fucked up","Fuck you",
         countOfAttempts = r.nextInt(high-low) + low;
     }
 
+    /**
+     * Mehot to override backpress
+     */
     @Override
     public void onBackPressed() {
         if(countOfAttempts == 0){
